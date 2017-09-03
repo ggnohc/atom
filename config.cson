@@ -1,0 +1,25 @@
+"*":
+  "autocomplete-python":
+    useKite: false
+  core:
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "*.pyc"
+      ".*"
+    ]
+    telemetryConsent: "no"
+  "exception-reporting":
+    userId: "9b7d05db-121d-4c16-b7f3-e2a686681b4b"
+  kite:
+    showKiteTourOnStatup: false
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
