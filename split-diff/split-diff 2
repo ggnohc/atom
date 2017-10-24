@@ -1,1162 +1,371 @@
-<sdf version='1.6'>
-  <world name='default'>
-    <light name='sun' type='directional'>
-      <cast_shadows>1</cast_shadows>
-      <pose frame=''>0 0 10 0 -0 0</pose>
-      <diffuse>0.8 0.8 0.8 1</diffuse>
-      <specular>0.2 0.2 0.2 1</specular>
-      <attenuation>
-        <range>1000</range>
-        <constant>0.9</constant>
-        <linear>0.01</linear>
-        <quadratic>0.001</quadratic>
-      </attenuation>
-      <direction>-0.5 0.1 -0.9</direction>
-    </light>
-    <model name='ground_plane'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/DarkGrey</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <gravity>0 0 -9.8</gravity>
-    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
-    <atmosphere type='adiabatic'/>
-    <physics name='default_physics' default='0' type='ode'>
-      <max_step_size>0.001</max_step_size>
-      <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>1000</real_time_update_rate>
-    </physics>
-    <scene>
-      <ambient>0.4 0.4 0.4 1</ambient>
-      <background>0.7 0.7 0.7 1</background>
-      <shadows>1</shadows>
-    </scene>
-    <spherical_coordinates>
-      <surface_model>EARTH_WGS84</surface_model>
-      <latitude_deg>0</latitude_deg>
-      <longitude_deg>0</longitude_deg>
-      <elevation>0</elevation>
-      <heading_deg>0</heading_deg>
-    </spherical_coordinates>
-    <state world_name='default'>
-      <sim_time>1299 982000000</sim_time>
-      <real_time>138 212883467</real_time>
-      <wall_time>1501210048 861670565</wall_time>
-      <iterations>137377</iterations>
-      <model name='biscuits'>
-        <pose frame=''>0.590002 -0.230002 0.609995 1e-06 -3e-06 -5e-06</pose>
-        <scale>1 1 1</scale>
-        <link name='biscuits_link'>
-          <pose frame=''>0.590002 -0.230002 0.609995 1e-06 -3e-06 -5e-06</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -0.98 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='book'>
-        <pose frame=''>0.5 0.08 0.609992 3e-06 -1e-06 -1.76</pose>
-        <scale>1 1 1</scale>
-        <link name='book_link'>
-          <pose frame=''>0.5 0.08 0.609992 3e-06 -1e-06 -1.76</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -0.784 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='dropbox'>
-        <pose frame=''>0 -0.71 0.605 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link_0'>
-          <pose frame=''>0 -0.71 0.605 0 0 -1.56873</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='dropbox_clone'>
-        <pose frame=''>0 0.71 0.605 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link_0'>
-          <pose frame=''>0 0.71 0.605 0 0 -1.56873</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='eraser'>
-        <pose frame=''>0.599997 0.265533 0.615001 0.000277 -0.00046 -3e-06</pose>
-        <scale>1 1 1</scale>
-        <link name='eraser_link'>
-          <pose frame=''>0.599997 0.265533 0.615001 0.000277 -0.00046 -3e-06</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -0.98 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='glue'>
-        <pose frame=''>0.619888 0.130072 0.6095 0.000155 0.000105 -0.000127</pose>
-        <scale>1 1 1</scale>
-        <link name='glue_link'>
-          <pose frame=''>0.619888 0.130072 0.6095 0.000155 0.000105 -0.000127</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -0.784 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='ground_plane'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='short_table'>
-        <pose frame=''>0.6 0 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link_0'>
-          <pose frame=''>0.6 0 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='short_table_clone'>
-        <pose frame=''>0 -0.7 0 0 -0 1.57</pose>
-        <scale>1 1 1</scale>
-        <link name='link_0'>
-          <pose frame=''>0 -0.7 0 0 -0 1.57</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='short_table_clone_0'>
-        <pose frame=''>0 0.7 0 0 -0 1.57</pose>
-        <scale>1 1 1</scale>
-        <link name='link_0'>
-          <pose frame=''>0 0.7 0 0 -0 1.57</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='snacks'>
-        <pose frame=''>0.417592 -0.361158 0.610019 0.016313 -0.027885 -0.000227</pose>
-        <scale>1 1 1</scale>
-        <link name='snacks_link'>
-          <pose frame=''>0.417592 -0.361158 0.610019 0.016313 -0.027885 -0.000227</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -0.784 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='soap'>
-        <pose frame=''>0.68 0 0.61 2e-06 -4e-06 0.1</pose>
-        <scale>1 1 1</scale>
-        <link name='soap_link'>
-          <pose frame=''>0.68 0 0.61 2e-06 -4e-06 0.1</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -0.784 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='soap2'>
-        <pose frame=''>0.460001 -0.049999 0.612493 -2e-05 2.1e-05 -1.57</pose>
-        <scale>1 1 1</scale>
-        <link name='soap2_link'>
-          <pose frame=''>0.460001 -0.049999 0.612493 -2e-05 2.1e-05 -1.57</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -0.784 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='sticky_notes'>
-        <pose frame=''>0.449998 0.22 0.609998 -3e-06 -8e-06 0</pose>
-        <scale>1 1 1</scale>
-        <link name='sticky_notes_link'>
-          <pose frame=''>0.449998 0.22 0.609998 -3e-06 -8e-06 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -0.784 0 -0 0</wrench>
-        </link>
-      </model>
-      <light name='sun'>
-        <pose frame=''>0 0 10 0 -0 0</pose>
-      </light>
-    </state>
-    <gui fullscreen='0'>
-      <camera name='user_camera'>
-        <pose frame=''>-1.43812 -0.039204 1.77247 -0 0.5226 -0.08228</pose>
-        <view_controller>orbit</view_controller>
-        <projection_type>perspective</projection_type>
-      </camera>
-    </gui>
-    <model name='dropbox'>
-      <link name='link_0'>
-        <pose frame=''>0 -0 0 0 0 -1.56873</pose>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://dropbox/meshes/dropbox.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <lighting>1</lighting>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-            <ambient>0 0.3 0.3 1</ambient>
-            <diffuse>0 0.7 0.7 1</diffuse>
-            <specular>0 0.01 0.01 1</specular>
-            <emissive>0 0 0 1</emissive>
-          </material>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://dropbox/meshes/dropbox.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-0.000641 -0.602849 0 0 -0 0</pose>
-    </model>
-    <model name='dropbox_clone'>
-      <link name='link_0'>
-        <pose frame=''>0 -0 0 0 0 -1.56873</pose>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://dropbox/meshes/dropbox.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <lighting>1</lighting>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-            <ambient>0.3 0 0.1 1</ambient>
-            <diffuse>0.7 0 0.2 1</diffuse>
-            <specular>0.01 0 0.01 1</specular>
-            <emissive>0 0 0 1</emissive>
-          </material>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://dropbox/meshes/dropbox.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>0.190807 0.649933 0 0 -0 0</pose>
-    </model>
-    <model name='short_table'>
-      <link name='link_0'>
-        <pose frame=''>-0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://short_table/meshes/short_table.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <lighting>1</lighting>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/DarkGray</name>
-            </script>
-          </material>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://short_table/meshes/short_table.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>0.688426 0.117322 0 0 -0 0</pose>
-    </model>
-    <model name='short_table_clone'>
-      <link name='link_0'>
-        <pose frame=''>-0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://short_table/meshes/short_table.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <lighting>1</lighting>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/DarkGray</name>
-            </script>
-          </material>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://short_table/meshes/short_table.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>0.313898 0.939936 0 0 -0 0</pose>
-    </model>
-    <model name='short_table_clone_0'>
-      <link name='link_0'>
-        <pose frame=''>-0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://short_table/meshes/short_table.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <lighting>1</lighting>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/DarkGray</name>
-            </script>
-          </material>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://short_table/meshes/short_table.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>0.21415 -0.916385 0 0 -0 0</pose>
-    </model>
-    <model name='biscuits'>
-      <link name='biscuits_link'>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <mass>0.1</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='biscuits_visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <material>
-            <script>
-              <uri>model://biscuits/materials/scripts</uri>
-              <uri>model://biscuits/materials/textures</uri>
-              <name>biscuits</name>
-            </script>
-          </material>
-          <geometry>
-            <mesh>
-              <uri>model://biscuits/meshes/biscuits.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='biscuits_collision'>
-          <pose frame=''>0.015 0.01 0.075 0 -0 2.2</pose>
-          <geometry>
-            <box>
-              <size>0.19 0.06 0.15</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0.266598 0.321459 0 0 -0 0</pose>
-    </model>
-    <model name='book'>
-      <link name='book_link'>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <mass>0.08</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='book_visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <material>
-            <script>
-              <uri>model://book/materials/scripts</uri>
-              <uri>model://book/materials/textures</uri>
-              <name>book</name>
-            </script>
-          </material>
-          <geometry>
-            <mesh>
-              <uri>model://book/meshes/book.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='book_collision'>
-          <pose frame=''>0 0 0.103 0 -0 2.3</pose>
-          <geometry>
-            <box>
-              <size>0.13 0.02 0.206</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0.24548 0.048171 0 0 -0 0</pose>
-    </model>
-    <model name='glue'>
-      <link name='glue_link'>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <mass>0.08</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='glue_visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <material>
-            <script>
-              <uri>model://glue/materials/scripts</uri>
-              <uri>model://glue/materials/textures</uri>
-              <name>glue</name>
-            </script>
-          </material>
-          <geometry>
-            <mesh>
-              <uri>model://glue/meshes/glue.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='glue_collision'>
-          <pose frame=''>0 0 0.067 0 0 -0.95</pose>
-          <geometry>
-            <box>
-              <size>0.054 0.032 0.133</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0.313371 -0.156509 0 0 -0 0</pose>
-    </model>
-    <model name='soap'>
-      <link name='soap_link'>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <mass>0.08</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='soap_visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <material>
-            <script>
-              <uri>model://soap/materials/scripts</uri>
-              <uri>model://soap/materials/textures</uri>
-              <name>soap</name>
-            </script>
-          </material>
-          <geometry>
-            <mesh>
-              <uri>model://soap/meshes/soap.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='soap_collision'>
-          <pose frame=''>0.02 0.002 0.05 0 0 -1.05</pose>
-          <geometry>
-            <box>
-              <size>0.14 0.065 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0.088898 0.212928 0 0 -0 0</pose>
-    </model>
-    <model name='soap2'>
-      <link name='soap2_link'>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <mass>0.08</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='soap2_visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <material>
-            <script>
-              <uri>model://soap2/materials/scripts</uri>
-              <uri>model://soap2/materials/textures</uri>
-              <name>soap2</name>
-            </script>
-          </material>
-          <geometry>
-            <mesh>
-              <uri>model://soap2/meshes/soap2.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='soap2_collision'>
-          <pose frame=''>-0.002 0.00502 0.05 0 0 -1</pose>
-          <geometry>
-            <box>
-              <size>0.065 0.04 0.105</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0.137813 -0.055588 0 0 -0 0</pose>
-    </model>
-    <model name='sticky_notes'>
-      <link name='sticky_notes_link'>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <mass>0.08</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='sticky_notes_visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <material>
-            <script>
-              <uri>model://sticky_notes/materials/scripts</uri>
-              <uri>model://sticky_notes/materials/textures</uri>
-              <name>sticky_notes</name>
-            </script>
-          </material>
-          <geometry>
-            <mesh>
-              <uri>model://sticky_notes/meshes/sticky_notes.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='sticky_notes_collision'>
-          <pose frame=''>0 0 0.06 0 -0 0.68</pose>
-          <geometry>
-            <box>
-              <size>0.043 0.055 0.12</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0.123077 -0.229482 0 0 -0 0</pose>
-    </model>
-    <model name='eraser'>
-      <link name='eraser_link'>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <mass>0.1</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='eraser_visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <material>
-            <script>
-              <uri>model://eraser/materials/scripts</uri>
-              <uri>model://eraser/materials/textures</uri>
-              <name>eraser</name>
-            </script>
-          </material>
-          <geometry>
-            <mesh>
-              <uri>model://eraser/meshes/eraser.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='eraser_collision'>
-          <pose frame=''>0.02 0.02 0.02 0 0 -0.95</pose>
-          <geometry>
-            <box>
-              <size>0.135 0.06 0.05</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0.973615 0.265532 0 0 -0 0</pose>
-    </model>
-    <model name='snacks'>
-      <link name='snacks_link'>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <mass>0.08</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='snacks_visual'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <material>
-            <script>
-              <uri>model://snacks/materials/scripts</uri>
-              <uri>model://snacks/materials/textures</uri>
-              <name>snacks</name>
-            </script>
-          </material>
-          <geometry>
-            <mesh>
-              <uri>model://snacks/meshes/snacks.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='snacks_collision'>
-          <pose frame=''>0.04 0.02 0.117 0 -0 2.1</pose>
-          <geometry>
-            <box>
-              <size>0.165 0.06 0.235</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>0.503163 -0.426595 0 0 -0 0</pose>
-    </model>
-  </world>
-</sdf>
+#!/usr/bin/env python
+
+# Import modules
+import numpy as np
+import sklearn
+from sklearn.preprocessing import LabelEncoder
+import pickle
+from sensor_stick.srv import GetNormals
+from sensor_stick.features import compute_color_histograms
+from sensor_stick.features import compute_normal_histograms
+from visualization_msgs.msg import Marker
+from sensor_stick.marker_tools import *
+from sensor_stick.msg import DetectedObjectsArray
+from sensor_stick.msg import DetectedObject
+from sensor_stick.pcl_helper import *
+
+import rospy
+import tf
+from geometry_msgs.msg import Pose
+from std_msgs.msg import Float64
+from std_msgs.msg import Int32
+from std_msgs.msg import String
+from pr2_robot.srv import *
+from rospy_message_converter import message_converter
+import yaml
+
+
+# Helper function to get surface normals
+def get_normals(cloud):
+    get_normals_prox = rospy.ServiceProxy('/feature_extractor/get_normals', GetNormals)
+    return get_normals_prox(cloud).cluster
+
+# Helper function to create a yaml friendly dictionary from ROS messages
+def make_yaml_dict(test_scene_num, arm_name, object_name, pick_pose, place_pose):
+    yaml_dict = {}
+    yaml_dict["test_scene_num"] = test_scene_num.data
+    yaml_dict["arm_name"]  = arm_name.data
+    yaml_dict["object_name"] = object_name.data
+    yaml_dict["pick_pose"] = message_converter.convert_ros_message_to_dictionary(pick_pose)
+    yaml_dict["place_pose"] = message_converter.convert_ros_message_to_dictionary(place_pose)
+    return yaml_dict
+
+# Helper function to output to yaml file
+def send_to_yaml(yaml_filename, dict_list):
+    data_dict = {"object_list": dict_list}
+    with open(yaml_filename, 'w') as outfile:
+        yaml.dump(data_dict, outfile, default_flow_style=False)
+
+# Callback function for your Point Cloud Subscriber
+def pcl_callback(pcl_msg):
+
+# Exercise-2 TODOs:
+
+    # TODO: Convert ROS msg to PCL data
+    pcl_data = ros_to_pcl(pcl_msg)
+
+    # TODO: Statistical Outlier Filtering
+    # From Lesson 3-16 Outlier Removal Filter
+    # Much like the previous filters, we start by creating a filter object:
+    outlier_filter = pcl_data.make_statistical_outlier_filter()
+
+    # Set the number of neighboring points to analyze for any given point
+    outlier_filter.set_mean_k(50)
+
+    # Set threshold scale factor
+    x = 1.0
+
+    # Any point with a mean distance larger than global (mean distance+x*std_dev) will be considered outlier
+    outlier_filter.set_std_dev_mul_thresh(x)
+
+    # Finally call the filter function for magic
+    pcl_data = outlier_filter.filter()
+
+    # TODO: Voxel Grid Downsampling
+    # Voxel Grid filter
+    # Create a VoxelGrid filter object for input point cloud
+    vox = pcl_data.make_voxel_grid_filter()
+
+    # Choose a voxel (leaf) size
+    # LEAF_SIZE = 1
+    LEAF_SIZE = 0.01  #this gives the best results
+
+    # Set the voxel (leaf) size
+    vox.set_leaf_size(LEAF_SIZE, LEAF_SIZE, LEAF_SIZE)
+
+    # Call the filter function to obtain the resultant downsampled point cloud
+    pcl_data_filtered = vox.filter()
+    # filename = 'voxel_downsampled.pcd'
+    # pcl.save(pcl_data_filtered, filename)
+
+    # TODO: PassThrough Filter
+    # Create a PassThrough filter object.
+    passthrough = pcl_data_filtered.make_passthrough_filter()
+
+    #Assign axis and range to the passthrough filter object.
+    filter_axis = 'z'
+    passthrough.set_filter_field_name(filter_axis)
+    axis_min = 0.6
+    axis_max = 1.1
+    passthrough.set_filter_limits(axis_min, axis_max)
+
+    #Finally use the filter function to obtain the resultant point cloud.
+    pcl_data_filtered = passthrough.filter()
+    # filename = 'pass_through_filtered.pcd'
+    # pcl.save(pcl_data_filtered, filename)
+
+    # TODO: RANSAC Plane Segmentation
+    # Create the segmentation object
+    seg = pcl_data_filtered.make_segmenter()
+
+    # Set the model you wish to fit
+    seg.set_model_type(pcl.SACMODEL_PLANE)
+    seg.set_method_type(pcl.SAC_RANSAC)
+
+    # Max distance for a point to be considered fitting the model
+    max_distance = 0.01
+    seg.set_distance_threshold(max_distance)
+
+    # ****This is so-called Extracting Indices****
+    # TODO: Extract inliers and outliers
+    # Call the segment function to obtain set of inlier indices and model coefficients
+    inliers, coefficients = seg.segment()
+
+    # Extract inliers
+    cloud_table = pcl_data_filtered.extract(inliers, negative=False)
+    # filename = 'cloud_table.pcd'
+    # pcl.save(cloud_table, filename)
+
+    # Extract outliers
+    cloud_objects = pcl_data_filtered.extract(inliers, negative=True)
+    # filename = 'cloud_objects.pcd'
+    # pcl.save(cloud_objects, filename)
+
+    # TODO: Euclidean Clustering  ****DBSCAN Algorithm****
+    white_cloud = XYZRGB_to_XYZ(cloud_objects)
+    tree = white_cloud.make_kdtree()
+
+    # Create a cluster extraction object
+    ec = white_cloud.make_EuclideanClusterExtraction()
+    # Set tolerances for distance threshold
+    # as well as minimum and maximum cluster size (in points)
+    ec.set_ClusterTolerance(0.015)
+    ec.set_MinClusterSize(20)
+    ec.set_MaxClusterSize(1500)
+    # Search the k-d tree for clusters
+    ec.set_SearchMethod(tree)
+    # Extract indices for each of the discovered clusters
+    cluster_indices = ec.Extract()
+
+    # TODO: Create Cluster-Mask Point Cloud to visualize each cluster separately
+    #Assign a color corresponding to each segmented object in scene
+    cluster_color = get_color_list(len(cluster_indices))
+
+    color_cluster_point_list = []
+
+    for j, indices in enumerate(cluster_indices):
+        for i, indice in enumerate(indices):
+            color_cluster_point_list.append([white_cloud[indice][0],
+                                            white_cloud[indice][1],
+                                            white_cloud[indice][2],
+                                             rgb_to_float(cluster_color[j])])
+
+    #Create new cloud containing all clusters, each with unique color
+    cluster_cloud = pcl.PointCloud_PointXYZRGB()
+    cluster_cloud.from_list(color_cluster_point_list)
+
+    # TODO: Convert PCL data to ROS messages
+    ros_cloud_objects = pcl_to_ros(cloud_objects)
+    ros_cloud_table = pcl_to_ros(cloud_table)
+    ros_cluster_cloud = pcl_to_ros(cluster_cloud)
+
+    # TODO: Publish ROS messages
+    pcl_objects_pub.publish(ros_cloud_objects)
+    pcl_table_pub.publish(ros_cloud_table)
+    pcl_cluster_pub.publish(ros_cluster_cloud)
+
+# Exercise-3 TODOs:
+
+    # Classify the clusters! (loop through each detected cluster one at a time)
+    detected_objects_labels = []
+    detected_objects = []
+
+    for index, pts_list in enumerate(cluster_indices):
+        # Grab the points for the cluster
+        # print ("index: {}; pts_list: {}".format(index, pts_list))
+        pcl_cluster = cloud_objects.extract(pts_list)
+        # TODO: convert the cluster from pcl to ROS using helper function
+        ros_cluster = pcl_to_ros(pcl_cluster)
+
+        # Extract histogram features
+        # TODO: complete this step just as is covered in capture_features.py
+        chists = compute_color_histograms(ros_cluster, using_hsv=True)  #GC: Use HSV
+        normals = get_normals(ros_cluster)
+        nhists = compute_normal_histograms(normals)
+        feature = np.concatenate((chists, nhists))
+        # labeled_features.append([feature, model_name])
+        # detected_objects_labels.append([feature, index])  #GC do we need this line?
+
+        # Compute the associated feature vector
+
+        # Make the prediction, retrieve the label for the result
+        # and add it to detected_objects_labels list
+        prediction = clf.predict(scaler.transform(feature.reshape(1,-1)))
+        label = encoder.inverse_transform(prediction)[0]
+        detected_objects_labels.append(label)
+
+        # Publish a label into RViz
+        label_pos = list(white_cloud[pts_list[0]])
+        label_pos[2] += .4
+        object_markers_pub.publish(make_label(label,label_pos, index))
+
+        # Add the detected object to the list of detected objects.
+        do = DetectedObject()
+        do.label = label
+        do.cloud = ros_cluster
+        detected_objects.append(do)
+
+    rospy.loginfo('Detected {} objects: {}'.format(len(detected_objects_labels), detected_objects_labels))
+    # Publish the list of detected objects  #GC: TODO
+    detected_objects_pub.publish(detected_objects)
+
+    # Suggested location for where to invoke your pr2_mover() function within pcl_callback()
+    # Could add some logic to determine whether or not your object detections are robust
+    # before calling pr2_mover()
+    try:
+        pr2_mover(detected_objects)
+    except rospy.ROSInterruptException:
+        pass
+
+# function to load parameters and request PickPlace service
+def pr2_mover(object_list):
+
+    # TODO: Initialize variables
+    labels = []
+    centroids = [] # list of tuples (x,y,z)
+    yaml_dict_list = [] # dictionary to store yaml_dict
+
+    #list of msg variables sending to pr2_pick_place_server
+    test_scene_num = Int32()
+    object_name = String()
+    arm_name = String()
+    pick_pose = Pose()
+    place_pose = Pose()
+
+    #rosmsg info geometry_msgs/Pose
+        # geometry_msgs/Point position
+        #   float64 x
+        #   float64 y
+        #   float64 z
+        # geometry_msgs/Quaternion orientation
+        #   float64 x
+        #   float64 y
+        #   float64 z
+        #   float64 w
+    #Based on definition of Pose() rosmsg defined above, initiatize the pick_pose
+    #and place_pose variables
+    pick_pose.position.x = 0
+    pick_pose.position.y = 0
+    pick_pose.position.z = 0
+
+    place_pose.position.x = 0
+    place_pose.position.y = 0
+    place_pose.position.z = 0
+
+    # TODO: Get/Read parameters
+    object_list_param = rospy.get_param('/object_list')
+    dropbox_param = rospy.get_param('/dropbox')
+
+    # TODO: Parse parameters into individual variables
+    # This step is done through for loop later on
+
+    # TODO: Rotate PR2 in place to capture side tables for the collision map
+
+    # TODO: Loop through the pick list
+    for obj in object_list_param:
+
+        # TODO: Get the PointCloud for a given object and obtain it's centroid
+        object_name.data = obj['name']
+        print("object_name.data:{}".format(object_name.data))
+
+        labels.append(object_name.data)
+        # Compare detected_objects (pass as 'object_list') and obj in object_list_param
+        # if match then calculate the centroid
+        for detected_obj in object_list:
+            if detected_obj.label == object_name.data:  #if detected object match item in pick list
+                points_arr = ros_to_pcl(detected_obj.cloud).to_array()
+                centroid_np = np.mean(points_arr, axis=0)[:3]
+                print("centroid_np: {}".format(centroid_np))
+                # recast to native Python float type as expected by ROS message
+                pick_pose.position.x = np.asscalar(centroid_np[0])
+                pick_pose.position.y = np.asscalar(centroid_np[1])
+                pick_pose.position.z = np.asscalar(centroid_np[2])
+                break
+
+        # TODO: Assign the arm to be used for pick_place
+        # definte arm_name based on group
+        if (obj['group']) == "red":
+            arm_name.data = "left"
+        elif (obj['group']) == "green":
+            arm_name.data = "right"
+        else:
+            print("ERROR: group must be 'red' or 'green'!!!")
+
+        # TODO: Create 'place_pose' for the object based on group defined
+        # loop through dropbox_param and set the place_pose when matches with arm_name
+        # discovered
+        for db in dropbox_param:
+            if arm_name.data == db['name']:
+                place_pose.position.x = db['position'][0]
+                place_pose.position.y = db['position'][1]
+                place_pose.position.z = db['position'][2]
+                break
+
+        # TODO: Create a list of dictionaries (made with make_yaml_dict()) for later output to yaml format
+        test_scene_num.data = 1
+
+        # Populate various ROS messages
+        yaml_dict = make_yaml_dict(test_scene_num, arm_name, object_name, pick_pose, place_pose)
+        yaml_dict_list.append(yaml_dict)
+
+        # Wait for 'pick_place_routine' service to come up
+        rospy.wait_for_service('pick_place_routine')
+
+        try:
+            pick_place_routine = rospy.ServiceProxy('pick_place_routine', PickPlace)
+
+            # TODO: Insert your message variables to be sent as a service request
+            # resp = pick_place_routine(TEST_SCENE_NUM, OBJECT_NAME, WHICH_ARM, PICK_POSE, PLACE_POSE)
+            resp = pick_place_routine(test_scene_num, object_name, arm_name, pick_pose, place_pose)
+
+            print ("Response: ",resp.success)
+
+        except rospy.ServiceException, e:
+            print "Service call failed: %s"%e
+
+    # TODO: Output your request parameters into output yaml file
+    output_yaml_file = "output_" + str(test_scene_num.data) + ".yaml"
+    send_to_yaml(output_yaml_file, yaml_dict_list)
+
+
+if __name__ == '__main__':
+
+    # TODO: ROS node initialization
+    rospy.init_node('clustering', anonymous=True)
+
+    # TODO: Create Subscribers
+    # __init__(self, name, data_class, callback=None, callback_args=None, queue_size=None, buff_size=65536, tcp_nodelay=False)
+    # pcl_sub = rospy.Subscriber("/sensor_stick/point_cloud", pc2.PointCloud2, pcl_callback, queue_size=1)
+    pcl_sub = rospy.Subscriber("/pr2/world/points", pc2.PointCloud2, pcl_callback, queue_size=1)
+
+    # TODO: Create Publishers
+    # __init__(self, name, data_class, subscriber_listener=None, tcp_nodelay=False, latch=False, headers=None, queue_size=None)
+    pcl_objects_pub = rospy.Publisher("/pcl_objects", PointCloud2, queue_size=1)
+    pcl_table_pub = rospy.Publisher("/pcl_table", PointCloud2, queue_size=1)
+    pcl_cluster_pub = rospy.Publisher("/pcl_cluster", PointCloud2, queue_size=1)
+    object_markers_pub = rospy.Publisher("/object_markers", Marker, queue_size=1)
+    detected_objects_pub = rospy.Publisher("/detected_objects", DetectedObjectsArray, queue_size=1)
+
+    # TODO: Load Model From disk
+    model = pickle.load(open('model.sav', 'rb'))
+    clf = model['classifier']
+    encoder = LabelEncoder()
+    encoder.classes_ = model['classes']
+    scaler = model['scaler']
+
+    # Initialize color_list
+    get_color_list.color_list = []
+
+    # TODO: Spin while node is not shutdown
+    while not rospy.is_shutdown():
+        rospy.spin()
